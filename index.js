@@ -1,10 +1,11 @@
 import React, { PureComponent } from 'react';
-import { View, StyleSheet, ART } from 'react-native';
+import { View, StyleSheet, ART, Dimensions } from 'react-native';
 import PropTypes from 'prop-types';
 
 import barcodes from 'jsbarcode/src/barcodes';
 
 const { Surface, Shape } = ART;
+const BARCODE_WIDTH = Dimensions.get('window').width - 32;
 
 export default class Barcode extends PureComponent {
   static propTypes = {
@@ -163,6 +164,7 @@ export default class Barcode extends PureComponent {
 
 const styles = StyleSheet.create({
   svgContainer: {
-    alignItems: 'center'
+    alignItems: 'center',
+    width: BARCODE_WIDTH
   }
 });
